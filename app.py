@@ -209,7 +209,7 @@ def makeWebhookResult(fin):
         "displayText": speech,
         
         # "contextOut": [],
-        "source": "cyborg1"
+        "source": "cyborg2"
     }
 
 def makeWebhookResult1(data):
@@ -246,7 +246,7 @@ def makeWebhookResult1(data):
     return {
         "speech": speech,
         "displayText": speech,
-        "source": "cyborg1"
+        "source": "cyborg2"
     }
 
 
