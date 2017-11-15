@@ -1,5 +1,5 @@
 Flask==0.10.1
 wikipedia==1.4.0
 wolframalpha==3.0
-DuckDuckGo-Python3-Library==1.0
 pyDictionary==1.5.2
+future==0.16.0

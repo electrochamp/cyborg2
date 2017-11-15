@@ -1,9 +1,6 @@
 #!/usr/bin/env python
-import urllib
-import urllib.error
-import urllib.request
-import urllib.parse
-import urllib.response
+#import urllib
+
 import json
 import os
 import wikipedia
@@ -12,6 +9,14 @@ import sys
 #from microsofttranslator import Translator
 import requests
 import random
+
+from urllib.parse import urlparse, urlencode
+from urllib.request import urlopen, Request
+
+from __future__ import print_function
+from future.standard_library import install_aliases
+install_aliases()
+
 from PyDictionary import PyDictionary
 
 from flask import Flask
@@ -132,9 +137,9 @@ def processRequest(req):
         yql_query = makeYqlQuery(req)
         if yql_query is None:
             return {}
-        yql_url = baseurl + urllib.request.urlencode({'q': yql_query}) + "&format=json"
-        result = urllib.request.urlopen(yql_url).read()
-        data = json.loads(result)
+		yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+		result = urlopen(yql_url).read()
+		data = json.loads(result)
         res = makeWebhookResult1(data)
         return res
     
