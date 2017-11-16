@@ -166,7 +166,7 @@ def processRequest(req):
                 answer = "There is no antonym for this word"
             return makeWebhookResult(answer)
 
-        elif test=='definition':
+        elif test=='definition' or 'define' or 'meaning':
             re1s = dictionary.meaning(ch)
             try:
                 try:
