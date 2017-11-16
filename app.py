@@ -41,7 +41,7 @@ def webhook():
 def processRequest(req):    
     #for wolfram alpha
     if req.get("result").get("action") == "fact":
-		app_id = "VQWY43-HAAQ5PGGWQ"
+	app_id = "VQWY43-HAAQ5PGGWQ"
         client = wolframalpha.Client(app_id)
         john = client.query(req.get("result").get("resolvedQuery"))
         answer = next(john.results).text
