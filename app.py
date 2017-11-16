@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 #import urllib
 
+from __future__ import print_function
+from future.standard_library import install_aliases
+install_aliases()
+
+from urllib.parse import urlparse, urlencode
+from urllib.request import urlopen, Request
+
 import json
 import os
 import wikipedia
@@ -10,13 +17,6 @@ import sys
 import requests
 import random
 
-from urllib.parse import urlparse, urlencode
-from urllib.request import urlopen, Request
-
-from __future__ import print_function
-from future.standard_library import install_aliases
-install_aliases()
-
 from PyDictionary import PyDictionary
 
 from flask import Flask
@@ -25,7 +25,6 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
 
 
 
